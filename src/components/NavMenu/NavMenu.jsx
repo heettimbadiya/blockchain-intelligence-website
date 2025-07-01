@@ -1,28 +1,36 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const menuItems = [
-  { label: 'Products', path: '/products' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Services', path: '/services' },
-  { label: 'Insights', path: '/insights' },
-  { label: 'Company', path: '/company' },
+    { label: 'Home', path: '/' },
+    { label: 'Solutions', path: '/solutions' },
+    { label: 'About Us', path: '/about' },
+    { label: 'Resources', path: '/resources' },
+    { label: 'Contact', path: '/contact' },
 ];
 
-export default function NavMenu() {
-  return (
-    <nav>
-      <ul className="flex gap-9 list-none m-0 p-0">
-        {menuItems.map(item => (
-          <li key={item.label}>
-            <Link
-              to={item.path}
-              className="text-lg text-[#222] cursor-pointer transition-colors duration-200 hover:text-[#ff6600]"
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-} 
+export default function NavMenu({ isMobile = false }) {
+    return (
+        <nav>
+            <ul className={`${
+                isMobile
+                    ? 'flex flex-col gap-4 list-none m-0 p-0'
+                    : 'flex gap-6 xl:gap-9 list-none m-0 p-0'
+            }`}>
+                {menuItems.map(item => (
+                    <li key={item.label}>
+                        <Link
+                            to={item.path}
+                            className={`${
+                                isMobile
+                                    ? 'block text-lg sm:text-xl py-3 px-2 text-[#222] border-b border-gray-100 last:border-b-0 transition-colors duration-200 hover:text-[#ff6600] hover:bg-gray-50 rounded-md'
+                                    : 'text-base xl:text-lg text-[#222] cursor-pointer transition-colors duration-200 hover:text-[#ff6600]'
+                            } font-medium`}
+                        >
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
