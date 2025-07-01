@@ -1,0 +1,16 @@
+.menu {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menuItem {
+  font-size: 1.3rem;
+  color: #222;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.menuItem:hover {
+  color: #ff6600;
+} 

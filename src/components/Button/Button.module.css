@@ -1,0 +1,24 @@
+.primary {
+  background: #27346a;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.outline {
+  background: #fff;
+  color: #27346a;
+  border: 1.5px solid #e0e3eb;
+  border-radius: 32px;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.outline:hover {
+  background: #f5f6fa;
+} 
