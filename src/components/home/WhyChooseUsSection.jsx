@@ -2,53 +2,36 @@ import React from "react";
 import { BarChart3, Globe, Users } from "lucide-react";
 
 export default function WhyChooseUsSection() {
+  const features = [
+    { icon: BarChart3, title: 'Unparalleled Data Accuracy' },
+    { icon: Globe, title: 'Comprehensive Coverage' },
+    { icon: Users, title: 'Expert Support & Innovation' },
+  ];
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--navy-blue)' }}>
-            The BlockIntel Difference
-          </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-light)' }}>
-            Why leading organizations choose our blockchain intelligence platform
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-6 p-4 rounded-full" style={{ backgroundColor: 'var(--light-gray)' }}>
-              <BarChart3 className="w-8 h-8" style={{ color: 'var(--navy-blue)' }} />
-            </div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--navy-blue)' }}>
-              Unparalleled Data Accuracy
-            </h3>
-            <p className="text-gray-600">
-              Our proprietary machine learning and robust architecture ensure the most precise and reliable blockchain data in the industry.
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#27346a] mb-4">The BlockIntel Difference</h2>
+            <div className="w-16 h-1 bg-orange-500 rounded-full mx-auto mb-6" />
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Why leading organizations choose us over the competition
             </p>
           </div>
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-6 p-4 rounded-full" style={{ backgroundColor: 'var(--light-gray)' }}>
-              <Globe className="w-8 h-8" style={{ color: 'var(--navy-blue)' }} />
-            </div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--navy-blue)' }}>
-              Comprehensive Coverage
-            </h3>
-            <p className="text-gray-600">
-              Seamlessly integrate new blockchains and support all major tokens, providing an unmatched view of the crypto landscape.
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-6 p-4 rounded-full" style={{ backgroundColor: 'var(--light-gray)' }}>
-              <Users className="w-8 h-8" style={{ color: 'var(--navy-blue)' }} />
-            </div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--navy-blue)' }}>
-              Expert Support & Innovation
-            </h3>
-            <p className="text-gray-600">
-              Benefit from our global team's 24/7 expertise and our dedicated R&D initiatives that continuously deliver groundbreaking features.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((f, i) => (
+                <div
+                    key={i}
+                    className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 text-center border border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <f.icon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#27346a] mb-2">{f.title}</h3>
+                  <p className="text-gray-600">Delivering excellence in every engagement.</p>
+                </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 } 

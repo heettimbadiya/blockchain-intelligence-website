@@ -1,35 +1,44 @@
 import React from "react";
-
+import {Card, CardContent} from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
+import {CustomButton} from "@/components/Button/Button";
 export default function LatestInsightsSection() {
+  const insights = [
+  { title: 'How Blockchain Analytics Uncovers Illicit Activity', category: 'Investigation' },
+  { title: '2024 Crypto Compliance Trends', category: 'Compliance' },
+  { title: 'Web3 Security: Protecting the Decentralized Future', category: 'Security' },
+];
   return (
-    <section className="py-20" style={{ backgroundColor: 'var(--light-gray)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--navy-blue)' }}>
-            Latest Insights & News
-          </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-light)' }}>
-            Explore our latest blog posts, reports, and industry news.
-          </p>
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#27346a] mb-4">Latest Insights & News</h2>
+            <div className="w-16 h-1 bg-orange-500 rounded-full mx-auto mb-6" />
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Stay informed with our analysis and thought leadership.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {insights.map((insight, i) => (
+                <Card
+                    key={i}
+                    className="bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <CardContent className="p-8">
+                    <div className="text-sm font-semibold text-orange-500 uppercase mb-3">{insight.category}</div>
+                    <h3 className="text-xl font-bold text-[#27346a] mb-4 group-hover:text-orange-500 transition-colors duration-200">
+                      {insight.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6">Read our latest expert perspectives and reports.</p>
+                    <CustomButton variant="ghost">Read More <ChevronRight className="ml-1 w-4 h-4" /></CustomButton>
+                  </CardContent>
+                </Card>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <CustomButton variant="secondary">View All Insights</CustomButton>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow border">
-            <h3 className="text-xl font-semibold mb-2">How Blockchain Analytics Uncovers Illicit Activity</h3>
-            <p className="text-gray-600 mb-4">Discover how advanced analytics help law enforcement and businesses trace and prevent financial crime in the crypto space.</p>
-            <a href="#" className="text-orange-600 font-medium">Read More</a>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow border">
-            <h3 className="text-xl font-semibold mb-2">2024 Crypto Compliance Trends</h3>
-            <p className="text-gray-600 mb-4">Stay ahead of regulatory changes and learn how to build a robust compliance program for your crypto business.</p>
-            <a href="#" className="text-orange-600 font-medium">Read More</a>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow border">
-            <h3 className="text-xl font-semibold mb-2">Web3 Security: Protecting the Decentralized Future</h3>
-            <p className="text-gray-600 mb-4">Learn about the latest threats and best practices for securing DeFi protocols, NFTs, and smart contracts.</p>
-            <a href="#" className="text-orange-600 font-medium">Read More</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
   );
 } 

@@ -1,107 +1,209 @@
-import React from "react";
-import { Link, Routes, Route, Outlet } from "react-router-dom";
-
-function Investigations() {
-  return (
-    <div className="py-8">
-      <h2 className="text-3xl font-bold mb-4">Advanced Blockchain Investigations</h2>
-      <p className="mb-4">Uncover illicit activity and analyze complex networks. Our investigations platform provides unparalleled visibility into the flow of funds across diverse blockchains. Empower law enforcement, intelligence agencies, and financial institutions to dismantle criminal networks and recover stolen assets.</p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Comprehensive Transaction Tracing</li>
-        <li>Entity Identification</li>
-        <li>Visualization Tools</li>
-        <li>Case Management</li>
-        <li>Threat Intelligence</li>
-      </ul>
-      <button className="bg-orange-600 text-white py-2 px-4 rounded font-semibold">Request a Demo</button>
-    </div>
-  );
-}
-
-function Compliance() {
-  return (
-    <div className="py-8">
-      <h2 className="text-3xl font-bold mb-4">Real-time Crypto Compliance & Risk Mitigation</h2>
-      <p className="mb-4">Automated, real-time monitoring and risk assessment tools to help you meet AML/CFT obligations, prevent illicit transactions, and build trust with regulators and customers.</p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Real-time Transaction Monitoring (KYT)</li>
-        <li>VASP Risking</li>
-        <li>Address Screening</li>
-        <li>Risk Scoring & Reporting</li>
-        <li>Policy Enforcement</li>
-      </ul>
-      <button className="bg-orange-600 text-white py-2 px-4 rounded font-semibold">Request a Demo</button>
-    </div>
-  );
-}
-
-function Web3Security() {
-  return (
-    <div className="py-8">
-      <h2 className="text-3xl font-bold mb-4">Securing the Decentralized Future</h2>
-      <p className="mb-4">Safeguard decentralized applications, smart contracts, and blockchain networks from exploits, scams, and vulnerabilities. Proactive identification and prevention of threats.</p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Exploit Detection & Prevention</li>
-        <li>Smart Contract Auditing</li>
-        <li>DeFi & NFT Risk Assessment</li>
-        <li>Incident Response Support</li>
-        <li>Supply Chain Security</li>
-      </ul>
-      <button className="bg-orange-600 text-white py-2 px-4 rounded font-semibold">Request a Demo</button>
-    </div>
-  );
-}
-
-function Analytics() {
-  return (
-    <div className="py-8">
-      <h2 className="text-3xl font-bold mb-4">Data-Driven Decisions for the Blockchain Economy</h2>
-      <p className="mb-4">Transform raw blockchain data into actionable intelligence. Customizable dashboards and market intelligence for informed decisions.</p>
-      <ul className="list-disc ml-6 mb-4">
-        <li>Customizable Dashboards</li>
-        <li>Market Intelligence</li>
-        <li>Entity Profiling</li>
-        <li>API Access</li>
-        <li>Research & Reporting</li>
-      </ul>
-      <button className="bg-orange-600 text-white py-2 px-4 rounded font-semibold">Request a Demo</button>
-    </div>
-  );
-}
+import React, { useState } from "react";
+import {
+    Search,
+    Shield,
+    BarChart3,
+    AlertTriangle,
+    ArrowRight,
+    Play,
+    Download,
+    BookOpen,
+    CheckCircle
+} from "lucide-react";
 
 export default function SolutionsSection() {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Our Solutions</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="p-6 border rounded-lg bg-white shadow">
-          <h2 className="text-2xl font-semibold mb-2">Investigations & Forensics</h2>
-          <p className="mb-4">Uncover illicit activity and analyze complex networks. Advanced analytics for law enforcement, intelligence agencies, and financial institutions.</p>
-          <Link to="/solutions/investigations" className="text-orange-600 font-medium">Learn More</Link>
+    const [activeTab, setActiveTab] = useState("investigations");
+
+    const solutions = [
+        {
+            id: "investigations",
+            title: "Investigations & Forensics",
+            subtitle: "Advanced Blockchain Investigations",
+            headline: "Uncover Illicit Activity and Analyze Complex Networks",
+            icon: <Search className="w-8 h-8" />,
+            description:
+                "Identify and trace illicit cryptocurrency activity with sophisticated investigations tools for law enforcement, intelligence agencies, and financial institutions.",
+            features: [
+                "Comprehensive Transaction Tracing",
+                "Entity Identification",
+                "Visualization Tools",
+                "Case Management",
+                "Threat Intelligence"
+            ],
+            primaryCTA: "Request a Demo",
+            secondaryCTA: "Learn More"
+        },
+        {
+            id: "compliance",
+            title: "Compliance & Risk Management",
+            subtitle: "Real-time Crypto Compliance & Risk Mitigation",
+            headline: "Ensure Regulatory Adherence and Protect Your Platform",
+            icon: <Shield className="w-8 h-8" />,
+            description:
+                "Automated real-time monitoring and risk assessment tools to help you meet AML/CFT obligations and prevent illicit transactions.",
+            features: [
+                "Real-time Transaction Monitoring",
+                "VASP Risking",
+                "Address Screening",
+                "Risk Scoring & Reporting",
+                "Policy Enforcement"
+            ],
+            primaryCTA: "Request a Demo",
+            secondaryCTA: "View Case Studies"
+        },
+        {
+            id: "web3-security",
+            title: "Web3 Security",
+            subtitle: "Securing the Decentralized Future",
+            headline: "Protect Protocols, Chains, and Assets from Emerging Threats",
+            icon: <AlertTriangle className="w-8 h-8" />,
+            description:
+                "Safeguard decentralized applications, smart contracts, and blockchain networks from exploits, scams, and vulnerabilities.",
+            features: [
+                "Exploit Detection & Prevention",
+                "Smart Contract Auditing",
+                "DeFi & NFT Risk Assessment",
+                "Incident Response Support",
+                "Supply Chain Security"
+            ],
+            primaryCTA: "Request a Demo",
+            secondaryCTA: "Download Whitepaper"
+        },
+        {
+            id: "analytics",
+            title: "Strategic Insights & Data Analytics",
+            subtitle: "Data-Driven Decisions for the Blockchain Economy",
+            headline: "Transform Blockchain Data into Actionable Intelligence",
+            icon: <BarChart3 className="w-8 h-8" />,
+            description:
+                "Bespoke analyses, market intelligence, and customizable dashboards to empower businesses and investors.",
+            features: [
+                "Customizable Dashboards",
+                "Market Intelligence",
+                "Entity Profiling",
+                "API Access",
+                "Research & Reporting"
+            ],
+            primaryCTA: "Request a Demo",
+            secondaryCTA: "Explore Data Solutions"
+        }
+    ];
+
+    const activeSolution = solutions.find(s => s.id === activeTab);
+
+    return (
+        <div className="min-h-screen bg-gray-50">
+            {/* Hero Section */}
+            <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 min-h-[60vh] flex items-center">
+                <div className="max-w-7xl mx-auto px-6 py-20 w-full">
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h1 className="text-5xl md:text-6xl font-bold text-[#27346a] mb-6">
+                            Our Solutions
+                        </h1>
+                        <div className="w-24 h-1.5 bg-orange-500 rounded-full mx-auto mb-6"></div>
+                        <p className="text-lg md:text-xl text-gray-700">
+                            Comprehensive blockchain intelligence solutions for investigations,
+                            compliance, security, and analytics.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Solutions Grid */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {solutions.map(solution => (
+                            <div
+                                key={solution.id}
+                                onClick={() => setActiveTab(solution.id)}
+                                className={`group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border transition-all duration-300 cursor-pointer hover:shadow-lg ${
+                                    activeTab === solution.id
+                                        ? "border-orange-500"
+                                        : "border-gray-100 hover:border-orange-300"
+                                }`}
+                            >
+                                <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    {solution.icon}
+                                </div>
+                                <h3 className="text-xl font-bold text-[#27346a] mb-3">
+                                    {solution.title}
+                                </h3>
+                                <p className="text-gray-600 mb-4">
+                                    {solution.description}
+                                </p>
+                                <div className="text-orange-600 flex items-center font-medium">
+                                    Learn More
+                                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Active Solution Details */}
+            <section className="py-20 bg-gray-50">
+                <div className="max-w-6xl mx-auto px-6">
+                    {activeSolution && (
+                        <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
+                            <div className="bg-gradient-to-br from-[#27346a] to-indigo-800 text-white p-10">
+                                <div className="flex items-start">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mr-6">
+                                        {activeSolution.icon}
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                                            {activeSolution.subtitle}
+                                        </h2>
+                                        <div className="w-16 h-1 bg-orange-500 rounded-full"></div>
+                                        <h3 className="text-lg md:text-xl text-blue-100 mt-4">
+                                            {activeSolution.headline}
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p className="mt-6 text-blue-50 max-w-3xl">
+                                    {activeSolution.description}
+                                </p>
+                            </div>
+                            <div className="p-10">
+                                <h4 className="text-2xl font-bold text-[#27346a] mb-6">
+                                    Key Features
+                                </h4>
+                                <div className="grid sm:grid-cols-2 gap-6">
+                                    {activeSolution.features.map((feature, i) => (
+                                        <div key={i} className="flex items-start group">
+                                            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-orange-200 transition duration-300">
+                                                <CheckCircle className="w-6 h-6 text-orange-600" />
+                                            </div>
+                                            <div>
+                                                <h5 className="text-lg font-semibold text-[#27346a] mb-1">
+                                                    {feature}
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                                    <button className="cursor-pointer bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all duration-300 flex items-center group shadow-lg hover:shadow-xl">
+                                        <Play className="w-5 h-5 mr-3" />
+                                        {activeSolution.primaryCTA}
+                                        <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                                    </button>
+                                    <button className="cursor-pointer border-2 border-[#27346a] text-[#27346a] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#27346a] hover:text-white transition-all duration-300 flex items-center">
+                                        {activeSolution.secondaryCTA === "Download Whitepaper" ? (
+                                            <Download className="w-5 h-5 mr-3" />
+                                        ) : (
+                                            <BookOpen className="w-5 h-5 mr-3" />
+                                        )}
+                                        {activeSolution.secondaryCTA}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </section>
         </div>
-        <div className="p-6 border rounded-lg bg-white shadow">
-          <h2 className="text-2xl font-semibold mb-2">Compliance & Risk Management</h2>
-          <p className="mb-4">Real-time crypto compliance and risk mitigation. Automated monitoring and risk assessment tools for regulatory adherence.</p>
-          <Link to="/solutions/compliance" className="text-orange-600 font-medium">Learn More</Link>
-        </div>
-        <div className="p-6 border rounded-lg bg-white shadow">
-          <h2 className="text-2xl font-semibold mb-2">Web3 Security</h2>
-          <p className="mb-4">Protect your protocols, chains, and assets from emerging Web3 threats. Proactive identification and prevention of vulnerabilities.</p>
-          <Link to="/solutions/web3-security" className="text-orange-600 font-medium">Learn More</Link>
-        </div>
-        <div className="p-6 border rounded-lg bg-white shadow">
-          <h2 className="text-2xl font-semibold mb-2">Strategic Insights & Data Analytics</h2>
-          <p className="mb-4">Transform raw blockchain data into actionable intelligence. Customizable dashboards and market intelligence for informed decisions.</p>
-          <Link to="/solutions/analytics" className="text-orange-600 font-medium">Learn More</Link>
-        </div>
-      </div>
-      <Routes>
-        <Route path="investigations" element={<Investigations />} />
-        <Route path="compliance" element={<Compliance />} />
-        <Route path="web3-security" element={<Web3Security />} />
-        <Route path="analytics" element={<Analytics />} />
-      </Routes>
-      <Outlet />
-    </div>
-  );
-} 
+    );
+}

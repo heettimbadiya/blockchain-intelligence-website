@@ -141,7 +141,7 @@ export default function Header() {
 
   return (
       <header
-          className={`${isFixed ? 'fixed' : ''} top-0 left-0 w-full flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-6 lg:py-8 bg-white z-50 shadow-sm transition-transform duration-300 ease-in-out ${
+          className={`${isFixed ? 'fixed' : ''} top-0 left-0 w-full flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 bg-white z-50 shadow-sm transition-transform duration-300 ease-in-out ${
               isFixed && isVisible ? 'translate-y-0' : isFixed && !isVisible ? '-translate-y-full' : 'translate-y-0'
           }`}
       >
@@ -173,8 +173,8 @@ export default function Header() {
         </div>
 
         {/* Mobile/Tablet Navigation */}
-        <div className="lg:hidden flex items-center">
-          <Drawer>
+        <div className="lg:hidden">
+          <Drawer direction="left" className={'h-full'}>
             <DrawerTrigger asChild>
               <button
                   aria-label="Open menu"
@@ -183,7 +183,7 @@ export default function Header() {
                 <Menu className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#27346a]" />
               </button>
             </DrawerTrigger>
-            <DrawerContent className="p-0 w-4/5 sm:w-3/4 max-w-sm bg-white h-full flex flex-col">
+            <DrawerContent className="p-0 w-4/5 sm:w-3/4 max-w-sm bg-white h-full flex flex-col fixed top-0 left-0 bottom-0 rounded-none border-r border-gray-200">
               {/* Mobile Header */}
               <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-200">
                 <div className="flex items-center min-w-0">
@@ -193,8 +193,8 @@ export default function Header() {
                       className="h-8 sm:h-10 mr-2 flex-shrink-0"
                   />
                   <span className="text-lg sm:text-xl font-bold text-[#ff6600] tracking-wide truncate">
-                  Chainalysis
-                </span>
+          Chainalysis
+        </span>
                 </div>
                 <DrawerClose asChild>
                   <button
@@ -207,7 +207,7 @@ export default function Header() {
               </div>
 
               {/* Mobile Navigation */}
-              <nav className="flex-1 px-4 sm:px-6 py-6 overflow-y-auto">
+              <nav className="flex-1 px-4 sm:px-6 py-6">
                 <NavMenu isMobile={true} />
               </nav>
 
