@@ -143,58 +143,59 @@ export default function SolutionsSection() {
             </section>
 
             {/* Active Solution Details */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="py-10 sm:py-16 bg-gray-50">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     {activeSolution && (
                         <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
-                            <div className="bg-gradient-to-br from-[#27346a] to-indigo-800 text-white p-10">
-                                <div className="flex items-start">
-                                    <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mr-6">
+                            {/* Top Gradient Header */}
+                            <div className="bg-gradient-to-br from-[#27346a] to-indigo-800 text-white px-6 py-8 sm:px-10 sm:py-10">
+                                <div className="flex flex-col sm:flex-row sm:items-start">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-orange-500 rounded-2xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6">
                                         {activeSolution.icon}
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
                                             {activeSolution.subtitle}
                                         </h2>
-                                        <div className="w-16 h-1 bg-orange-500 rounded-full"></div>
-                                        <h3 className="text-lg md:text-xl text-blue-100 mt-4">
+                                        <div className="w-12 sm:w-16 h-1 bg-orange-500 rounded-full"></div>
+                                        <h3 className="text-base sm:text-lg md:text-xl text-blue-100 mt-3">
                                             {activeSolution.headline}
                                         </h3>
                                     </div>
                                 </div>
-                                <p className="mt-6 text-blue-50 max-w-3xl">
+                                <p className="mt-4 sm:mt-6 text-blue-50 max-w-3xl text-sm sm:text-base">
                                     {activeSolution.description}
                                 </p>
                             </div>
-                            <div className="p-10">
-                                <h4 className="text-2xl font-bold text-[#27346a] mb-6">
+                            {/* Features */}
+                            <div className="px-6 py-8 sm:px-10 sm:py-10">
+                                <h4 className="text-xl sm:text-2xl font-bold text-[#27346a] mb-6">
                                     Key Features
                                 </h4>
-                                <div className="grid sm:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     {activeSolution.features.map((feature, i) => (
                                         <div key={i} className="flex items-start group">
-                                            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-orange-200 transition duration-300">
-                                                <CheckCircle className="w-6 h-6 text-orange-600" />
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 group-hover:bg-orange-200 transition duration-300">
+                                                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                                             </div>
-                                            <div>
-                                                <h5 className="text-lg font-semibold text-[#27346a] mb-1">
-                                                    {feature}
-                                                </h5>
-                                            </div>
+                                            <h5 className="text-base sm:text-lg font-semibold text-[#27346a]">
+                                                {feature}
+                                            </h5>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                                    <button className="cursor-pointer bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all duration-300 flex items-center group shadow-lg hover:shadow-xl">
-                                        <Play className="w-5 h-5 mr-3" />
+                                {/* CTAs */}
+                                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                    <button className="cursor-pointer bg-orange-500 text-white w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl">
+                                        <Play className="w-5 h-5 mr-2 sm:mr-3" />
                                         {activeSolution.primaryCTA}
-                                        <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                                        <ArrowRight className="w-5 h-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                                     </button>
-                                    <button className="cursor-pointer border-2 border-[#27346a] text-[#27346a] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#27346a] hover:text-white transition-all duration-300 flex items-center">
+                                    <button className="cursor-pointer border-2 border-[#27346a] text-[#27346a] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-[#27346a] hover:text-white transition-all duration-300 flex items-center justify-center">
                                         {activeSolution.secondaryCTA === "Download Whitepaper" ? (
-                                            <Download className="w-5 h-5 mr-3" />
+                                            <Download className="w-5 h-5 mr-2 sm:mr-3" />
                                         ) : (
-                                            <BookOpen className="w-5 h-5 mr-3" />
+                                            <BookOpen className="w-5 h-5 mr-2 sm:mr-3" />
                                         )}
                                         {activeSolution.secondaryCTA}
                                     </button>

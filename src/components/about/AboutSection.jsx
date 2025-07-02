@@ -39,30 +39,26 @@ export default function AboutSection() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 min-h-[80vh] flex items-center">
-                <div className="max-w-7xl mx-auto px-6 py-24 w-full">
-                    <div className="max-w-5xl mx-auto">
-                        {/* Centered Heading */}
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#27346a] mb-8 leading-[1.1] tracking-tight text-center">
+            <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 flex items-center py-20 sm:py-24 md:py-32">
+                <div className="max-w-7xl mx-auto w-full px-4 sm:px-6">
+                    <div className="max-w-4xl mx-auto text-center">
+                        {/* Main Heading */}
+                        <h1 className="text-5xl md:text-6xl font-bold text-[#27346a] mb-8">
                             About Us
                         </h1>
-                        <div className="w-32 h-1.5 bg-orange-500 rounded-full mx-auto mb-12"></div>
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#27346a] mb-12 leading-[1.3] max-w-4xl mx-auto text-center">
+
+                        {/* Orange Accent */}
+                        <div className="w-24 sm:w-28 md:w-32 h-1.5 bg-orange-500 rounded-full mx-auto mb-8 sm:mb-10"></div>
+
+                        {/* Subheading */}
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#27346a] leading-snug mb-10 sm:mb-12 max-w-3xl mx-auto">
                             Pioneering Blockchain Intelligence for a Secure Future
                         </h2>
 
-                        {/* Left-aligned Paragraphs */}
-                        <div className="max-w-4xl mx-auto text-left">
-                            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                                We are a team of passionate experts at the forefront of blockchain intelligence,
-                                dedicated to fostering trust and transparency in the digital economy. Founded on the
-                                principle that data can empower better decisions, we combine cutting-edge
-                                technology with deep industry expertise to provide unparalleled insights into the
-                                world of cryptocurrency.
-                            </p>
-                            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mt-6">
-                                Our mission is to make blockchain safe and accessible for
-                                everyone, from governments and financial institutions to businesses and individuals.
+                        {/* Paragraphs */}
+                        <div className="space-y-6 text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">
+                            <p>
+                                We are a team of passionate experts at the forefront of blockchain intelligence, dedicated to fostering trust and transparency in the digital economy. Founded on the principle that data can empower better decisions, we combine cutting-edge technology with deep industry expertise to provide unparalleled insights into the world of cryptocurrency.
                             </p>
                         </div>
                     </div>
