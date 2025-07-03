@@ -10,6 +10,7 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -79,7 +80,7 @@ export default function Header() {
 
         {/* Mobile/Tablet Navigation */}
         <div className="lg:hidden">
-          <Drawer direction="left" className={'h-full'}>
+          <Drawer direction="left" className={'h-full'} open={drawerOpen} onOpenChange={setDrawerOpen}>
             <DrawerTrigger asChild>
               <button
                   aria-label="Open menu"
@@ -113,7 +114,7 @@ export default function Header() {
 
               {/* Mobile Navigation */}
               <nav className="flex-1 px-4 sm:px-6 py-6">
-                <NavMenu isMobile={true} />
+                <NavMenu isMobile={true} onMenuItemClick={() => setDrawerOpen(false)} />
               </nav>
 
               {/* Mobile Action Buttons */}

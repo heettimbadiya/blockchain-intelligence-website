@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 import './App.css'
 import Header from "@/components/Header/Header.jsx";
 import {Route, Routes} from "react-router-dom";
@@ -15,10 +16,19 @@ import Report from "@/pages/Report.jsx";
 import Subscribe from "@/pages/Subscribe.jsx";
 import SingleBlog from "@/pages/SingleBlog.jsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return null;
+}
+
 function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       <Header />
 
       <Routes>
