@@ -58,7 +58,7 @@ export default function Header() {
               className="h-8 sm:h-10 md:h-12 mr-2 sm:mr-3 flex-shrink-0"
           />
           <span className="text-lg sm:text-xl md:text-2xl lg:text-[2rem] font-bold text-[#ff6600] tracking-wide truncate">
-          Blockintel
+          Chainalysis
         </span>
         </div>
 
@@ -98,7 +98,7 @@ export default function Header() {
                       className="h-8 sm:h-10 mr-2 flex-shrink-0"
                   />
                   <span className="text-lg sm:text-xl font-bold text-[#ff6600] tracking-wide truncate">
-          Blockintel
+          Chainalysis
         </span>
                 </div>
                 <DrawerClose asChild>
