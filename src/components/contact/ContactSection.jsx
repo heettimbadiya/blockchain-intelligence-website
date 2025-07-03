@@ -43,8 +43,8 @@ export default function ContactSection() {
         {
             icon: Mail,
             title: "General Inquiries",
-            details: "info@blockintel.com",
-            href: "mailto:info@blockintel.com",
+            details: "info@chainalysis.com",
+            href: "mailto:info@chainalysis.com",
             description: "For general questions and business inquiries",
         },
         {
@@ -57,8 +57,8 @@ export default function ContactSection() {
         {
             icon: Shield,
             title: "Support",
-            details: "support@blockintel.com",
-            href: "mailto:support@blockintel.com",
+            details: "support@chainalysis.com",
+            href: "mailto:support@chainalysis.com",
             description: "Technical support and customer service",
         },
     ];

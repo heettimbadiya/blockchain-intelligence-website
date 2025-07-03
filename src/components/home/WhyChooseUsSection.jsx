@@ -11,7 +11,7 @@ export default function WhyChooseUsSection() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#27346a] mb-4">The BlockIntel Difference</h2>
+            <h2 className="text-4xl font-bold text-[#27346a] mb-4">The Chainalysis Difference</h2>
             <div className="w-16 h-1 bg-orange-500 rounded-full mx-auto mb-6" />
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Why leading organizations choose us over the competition
