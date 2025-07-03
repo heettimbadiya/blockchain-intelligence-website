@@ -12,31 +12,66 @@ import {
     MessageSquare,
     Shield,
     CheckCircle,
-    ExternalLink,
 } from "lucide-react";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+
+// ✅ Validation schema
+const schema = yup.object().shape({
+    firstName: yup.string().required("First name is required"),
+    lastName: yup.string().required("Last name is required"),
+
+    businessEmail: yup
+        .string()
+        .email("Please enter a valid business email address")
+        .matches(
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            "Invalid email format"
+        )
+        .required("Business email is required"),
+
+    companyName: yup.string().required("Company name is required"),
+
+    phoneNumber: yup
+        .string()
+        .required("Phone number is required")
+        .matches(/^[0-9]{10}$/, "Phone number must be exactly 10 digits"),
+
+    organizationType: yup.string().required("Organization type is required"),
+    country: yup.string().required("Country is required"),
+    solutionOfInterest: yup.string().required("Solution of interest is required"),
+    heardAboutUs: yup.string().required("This field is required"),
+    customMessage: yup.string(), // Optional
+});
+
 
 export default function ContactSection() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        company: "",
-        role: "",
-        phone: "",
-        country: "",
-        message: "",
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm({
+        resolver: yupResolver(schema),
     });
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
+    const onSubmit = async (data) => {
+        try {
+            await axios.post("https://chainalysis-be.onrender.com/api/contacts", data);
+            toast.success("Form submitted successfully!");
+            setIsSubmitted(true);
+            reset();
+            setTimeout(() => setIsSubmitted(false), 3000);
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Failed to submit. Please try again later.");
+            toast.error("Failed to submit. Please try again later.");
+        }
     };
 
     const contactInfo = [
@@ -114,15 +149,18 @@ export default function ContactSection() {
                                 Request a Demo
                             </h2>
                             <div className="w-16 h-1 bg-orange-500 rounded-full mb-8"></div>
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     {[
-                                        { label: "Full Name *", name: "name", type: "text", icon: User },
-                                        { label: "Business Email *", name: "email", type: "email", icon: Mail },
-                                        { label: "Company", name: "company", type: "text", icon: Building },
-                                        { label: "Job Title", name: "role", type: "text", icon: Briefcase },
-                                        { label: "Phone Number", name: "phone", type: "tel", icon: Phone },
-                                        { label: "Country", name: "country", type: "text", icon: Globe },
+                                        { label: "First Name *", name: "firstName", type: "text", icon: User },
+                                        { label: "Last Name *", name: "lastName", type: "text", icon: User },
+                                        { label: "Business Email *", name: "businessEmail", type: "email", icon: Mail },
+                                        { label: "Company Name *", name: "companyName", type: "text", icon: Building },
+                                        { label: "Phone Number *", name: "phoneNumber", type: "tel", icon: Phone },
+                                        { label: "Country *", name: "country", type: "text", icon: Globe },
+                                        { label: "Organization Type *", name: "organizationType", type: "text", icon: Briefcase },
+                                        { label: "Solution of Interest *", name: "solutionOfInterest", type: "text", icon: Shield },
+                                        { label: "Heard About Us *", name: "heardAboutUs", type: "text", icon: Globe },
                                     ].map((field, idx) => (
                                         <div key={idx} className="space-y-2">
                                             <label className="text-sm font-semibold text-[#27346a] flex items-center gap-2">
@@ -130,29 +168,37 @@ export default function ContactSection() {
                                                 {field.label}
                                             </label>
                                             <input
-                                                required={field.label.includes("*")}
-                                                name={field.name}
+                                                {...register(field.name)}
                                                 type={field.type}
-                                                value={formData[field.name]}
-                                                onChange={handleInputChange}
                                                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-100 transition-all duration-200"
                                             />
+                                            {errors[field.name] && (
+                                                <p className="text-red-500 text-sm mt-1">
+                                                    {errors[field.name]?.message}
+                                                </p>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
+                                {/* Message Field */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-[#27346a] flex items-center gap-2">
                                         <MessageSquare className="w-4 h-4" />
-                                        Message
+                                        Custom Message
                                     </label>
                                     <textarea
-                                        name="message"
+                                        {...register("customMessage")}
                                         rows={4}
-                                        value={formData.message}
-                                        onChange={handleInputChange}
                                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-100 transition-all duration-200 resize-none"
                                     />
+                                    {errors.customMessage && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.customMessage.message}
+                                        </p>
+                                    )}
                                 </div>
+
+                                {/* Submit Buttons */}
                                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
                                     <button
                                         type="submit"
@@ -163,7 +209,7 @@ export default function ContactSection() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => window.open('tel:+15551234567', '_self')}
+                                        onClick={() => window.open("tel:+15551234567", "_self")}
                                         className="flex-1 border-2 border-orange-500 text-orange-500 hover:bg-orange-50 font-semibold py-4 rounded-xl flex items-center justify-center text-lg transition-all duration-300"
                                     >
                                         <Phone className="w-5 h-5 mr-2" />

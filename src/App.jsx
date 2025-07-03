@@ -15,6 +15,7 @@ import Blog from "@/pages/Blog.jsx";
 import Report from "@/pages/Report.jsx";
 import Subscribe from "@/pages/Subscribe.jsx";
 import SingleBlog from "@/pages/SingleBlog.jsx";
+import Toaster from "react-hot-toast";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,7 +31,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <ScrollToTop />
       <Header />
-
+      <Toaster position="top-center" />
       <Routes>
         <Route path={'/'} element={<Home />} />
         <Route path={'/solutions/*'} element={<Solutions />} />
