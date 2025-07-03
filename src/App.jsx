@@ -8,6 +8,12 @@ import About from "@/pages/About.jsx";
 import Resources from "@/pages/Resources.jsx";
 import Contact from "@/pages/Contact.jsx";
 import Footer from "@/components/footer/Footer.jsx";
+import Careers from "@/pages/Careers.jsx";
+import Culture from "@/pages/Culture.jsx";
+import Blog from "@/pages/Blog.jsx";
+import Report from "@/pages/Report.jsx";
+import Subscribe from "@/pages/Subscribe.jsx";
+import SingleBlog from "@/pages/SingleBlog.jsx";
 
 function App() {
 
@@ -21,6 +27,12 @@ function App() {
         <Route path={'/about'} element={<About />} />
         <Route path={'/resources'} element={<Resources />} />
         <Route path={'/contact'} element={<Contact />} />
+        <Route path={'/careers'} element={<Careers />} />
+        <Route path={'/culture'} element={<Culture />} />
+        <Route path={'/blog'} element={<Blog />} />
+        <Route path={'/blog/:id'} element={<SingleBlog />} />
+        <Route path={'/report'} element={<Report />} />
+        <Route path={'/subscribe'} element={<Subscribe />} />
       </Routes>
         <Footer />
 

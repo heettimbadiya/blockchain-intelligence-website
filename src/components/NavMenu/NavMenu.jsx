@@ -8,7 +8,7 @@ const menuItems = [
     { label: 'Contact', path: '/contact' },
 ];
 
-export default function NavMenu({ isMobile = false }) {
+export default function NavMenu({ isMobile = false, onMenuItemClick }) {
     return (
         <nav>
             <ul className={`${
@@ -25,6 +25,7 @@ export default function NavMenu({ isMobile = false }) {
                                     ? 'block text-lg sm:text-xl py-3 px-2 text-[#222] border-b border-gray-100 last:border-b-0 transition-colors duration-200 hover:text-[#ff6600] hover:bg-gray-50 rounded-md'
                                     : 'text-base xl:text-lg text-[#222] cursor-pointer transition-colors duration-200 hover:text-[#ff6600]'
                             } font-medium`}
+                            onClick={isMobile && onMenuItemClick ? onMenuItemClick : undefined}
                         >
                             {item.label}
                         </Link>

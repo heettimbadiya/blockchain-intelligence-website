@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     Search,
     Shield,
@@ -13,6 +14,7 @@ import {
 
 export default function SolutionsSection() {
     const [activeTab, setActiveTab] = useState("investigations");
+    const navigate = useNavigate();
 
     const solutions = [
         {
@@ -186,19 +188,36 @@ export default function SolutionsSection() {
                                 </div>
                                 {/* CTAs */}
                                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                    <button className="cursor-pointer bg-orange-500 text-white w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl">
+                                    <button
+                                        className="cursor-pointer bg-orange-500 text-white w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
+                                        onClick={() => navigate('/contact')}
+                                    >
                                         <Play className="w-5 h-5 mr-2 sm:mr-3" />
                                         {activeSolution.primaryCTA}
                                         <ArrowRight className="w-5 h-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                                     </button>
-                                    <button className="cursor-pointer border-2 border-[#27346a] text-[#27346a] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-[#27346a] hover:text-white transition-all duration-300 flex items-center justify-center">
+                                    {/* <button
+                                        className="cursor-pointer border-2 border-[#27346a] text-[#27346a] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-[#27346a] hover:text-white transition-all duration-300 flex items-center justify-center"
+                                        onClick={() => {
+                                            if (activeSolution.secondaryCTA === "Learn More") {
+                                                navigate(`/solutions/${activeSolution.id}`);
+                                            } else if (activeSolution.secondaryCTA === "Download Whitepaper") {
+                                                // Placeholder: replace with actual download logic if needed
+                                                window.open('#', '_blank');
+                                            } else if (activeSolution.secondaryCTA === "View Case Studies") {
+                                                navigate('/resources');
+                                            } else if (activeSolution.secondaryCTA === "Explore Data Solutions") {
+                                                navigate('/resources');
+                                            }
+                                        }}
+                                    >
                                         {activeSolution.secondaryCTA === "Download Whitepaper" ? (
                                             <Download className="w-5 h-5 mr-2 sm:mr-3" />
                                         ) : (
                                             <BookOpen className="w-5 h-5 mr-2 sm:mr-3" />
                                         )}
                                         {activeSolution.secondaryCTA}
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>

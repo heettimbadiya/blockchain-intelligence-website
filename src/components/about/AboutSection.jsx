@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, Users, Target, Eye, Heart, Briefcase, Building, Shield, Lightbulb, Handshake } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
     const values = [
@@ -35,6 +36,8 @@ export default function AboutSection() {
         { name: "Coming Soon", role: "Chief Technology Officer", image: "/api/placeholder/120/120" },
         { name: "Coming Soon", role: "Head of Operations", image: "/api/placeholder/120/120" }
     ];
+
+    const navigate = useNavigate();
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -175,11 +178,17 @@ export default function AboutSection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-                        <button className="cursor-pointer bg-white text-orange-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl">
+                        <button
+                            className="cursor-pointer bg-white text-orange-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
+                            onClick={() => navigate('/careers')}
+                        >
                             View Open Positions
                             <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
-                        <button className="cursor-pointer border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-orange-600 transition-all duration-300 backdrop-blur-sm">
+                        <button
+                            className="cursor-pointer border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-orange-600 transition-all duration-300 backdrop-blur-sm"
+                            onClick={() => navigate('/culture')}
+                        >
                             Learn More About Our Culture
                         </button>
                     </div>

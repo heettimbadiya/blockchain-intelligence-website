@@ -1,5 +1,6 @@
 import React from 'react';
 import {CustomButton} from "@/components/Button/Button";
+import {useNavigate} from "react-router-dom";
 
 export default function HeroSection({
                                         title = 'Blockchain intelligence for investigations, risk, and security',
@@ -8,6 +9,7 @@ export default function HeroSection({
                                         image,
                                         imageAlt = 'Hero Illustration',
                                     }) {
+    const navigate = useNavigate()
     return (
         <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 min-h-[80vh] flex items-center">
             <div className="max-w-7xl mx-auto px-6 py-24 w-full text-center">
@@ -19,8 +21,8 @@ export default function HeroSection({
                     Empowering governments, businesses, and institutions with the tools to navigate cryptocurrency with confidence.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <CustomButton variant="primary">Request a Demo</CustomButton>
-                    <CustomButton variant="secondary">Explore Our Solutions</CustomButton>
+                    <CustomButton variant="primary" onClick={() => navigate('/contact')}>Request a Demo</CustomButton>
+                    <CustomButton variant="secondary" onClick={() => navigate('/solutions')}>Explore Our Solutions</CustomButton>
                 </div>
             </div>
         </section>

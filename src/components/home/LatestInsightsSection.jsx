@@ -2,7 +2,10 @@ import React from "react";
 import {Card, CardContent} from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import {CustomButton} from "@/components/Button/Button";
+import { useNavigate } from "react-router-dom";
+
 export default function LatestInsightsSection() {
+  const navigate = useNavigate();
   const insights = [
   { title: 'How Blockchain Analytics Uncovers Illicit Activity', category: 'Investigation' },
   { title: '2024 Crypto Compliance Trends', category: 'Compliance' },
@@ -30,13 +33,17 @@ export default function LatestInsightsSection() {
                       {insight.title}
                     </h3>
                     <p className="text-gray-600 mb-6">Read our latest expert perspectives and reports.</p>
-                    <CustomButton variant="ghost">Read More <ChevronRight className="ml-1 w-4 h-4" /></CustomButton>
+                    <CustomButton variant="ghost" onClick={() => navigate('/resources')}>
+                      Read More <ChevronRight className="ml-1 w-4 h-4" />
+                    </CustomButton>
                   </CardContent>
                 </Card>
             ))}
           </div>
           <div className="text-center mt-12">
-            <CustomButton variant="secondary">View All Insights</CustomButton>
+            <CustomButton variant="secondary" onClick={() => navigate('/resources')}>
+              View All Insights
+            </CustomButton>
           </div>
         </div>
       </section>

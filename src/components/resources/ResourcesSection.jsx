@@ -11,6 +11,7 @@ import {
     ExternalLink,
 } from "lucide-react";
 import {CustomButton} from "@/components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function ResourcesSection() {
     const resourceCategories = [
@@ -81,6 +82,8 @@ export default function ResourcesSection() {
         },
     ];
 
+    const navigate = useNavigate();
+
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero */}
@@ -94,14 +97,16 @@ export default function ResourcesSection() {
                         Insights, Research, and Expertise from the Forefront of Blockchain
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <CustomButton variant="primary">
-                            <BookOpen className="w-5 h-5" />
+                        <CustomButton variant="primary" onClick={() => navigate('/blog')}>
+                            <BookOpen className="w-5 h-5 mr-2" />
                             Explore Our Blog
                         </CustomButton>
-                        <CustomButton variant="secondary">
-                            <Download className="w-5 h-5" />
-                            Download Our Latest Report
-                        </CustomButton>
+                        <a href="/dummy-report.pdf" download className="no-underline">
+                          <CustomButton variant="secondary">
+                              <Download className="w-5 h-5 mr-2" />
+                              Download Our Latest Report
+                          </CustomButton>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -154,6 +159,7 @@ export default function ResourcesSection() {
                             <CustomButton
                                 variant="ghost"
                                 className="w-full justify-center mt-2"
+                                onClick={() => navigate('/subscribe')}
                             >
                                 Get Notified
                                 <ArrowRight className="w-4 h-4" />
@@ -174,17 +180,20 @@ export default function ResourcesSection() {
                         Be the first to access new research, insights, and industry analysis.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <CustomButton variant="primary" className="text-lg px-8 py-3">
-                            <BookOpen className="w-5 h-5" />
-                            Subscribe to Updates
-                        </CustomButton>
-                        <CustomButton
-                            variant="secondary"
-                            className="border-white text-white hover:bg-white hover:text-orange-600 text-lg px-8 py-3"
+                        <button
+                            className="cursor-pointer flex items-center bg-white text-orange-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
+                            onClick={() => navigate('/subscribe')}
                         >
-                            <ExternalLink className="w-5 h-5" />
+                            <BookOpen className="w-5 h-5 mr-2" />
+                            Subscribe to Updates
+                        </button>
+                        <button
+                            className="cursor-pointer flex items-center border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-orange-600 transition-all duration-300 backdrop-blur-sm"
+                            onClick={() => navigate('/contact')}
+                        >
+                            <ExternalLink className="w-5 h-5 mr-2" />
                             Contact Our Experts
-                        </CustomButton>
+                        </button>
                     </div>
                 </div>
             </section>
