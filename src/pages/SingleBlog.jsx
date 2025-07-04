@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Tag, Clock, Share2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import crypto from '../assets/blogs/crypto.webp'
 import audit from '../assets/blogs/audit.webp'
 import block_chain from '../assets/blogs/block_chain.webp'
