@@ -73,7 +73,7 @@ export default function Header() {
           <Button variant="outline" className="text-sm xl:text-base">
             Log in
           </Button>
-          <Button variant="primary" className="text-sm xl:text-base" onClick={() => navigate('/contact')>
+          <Button variant="primary" className="text-sm xl:text-base" onClick={() => navigate('/contact')}>
             Request a demo
           </Button>
         </div>
@@ -122,7 +122,7 @@ export default function Header() {
                 <Button variant="outline" className="w-full justify-center">
                   Log in
                 </Button>
-                <Button variant="primary" className="w-full justify-center">
+                <Button variant="primary" className="w-full justify-center" onClick={() => navigate('/contact')}>
                   Request a demo
                 </Button>
               </div>

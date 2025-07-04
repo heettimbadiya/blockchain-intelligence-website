@@ -16,10 +16,10 @@ function Footer() {
                         <div>
                             <h4 className="font-semibold mb-4">Solutions</h4>
                             <ul className="space-y-2 text-gray-400">
-                                <li><a href="/" className="hover:text-white">Investigations</a></li>
-                                <li><a href="/" className="hover:text-white">Compliance</a></li>
-                                <li><a href="/" className="hover:text-white">Web3 Security</a></li>
-                                <li><a href="/" className="hover:text-white">Analytics</a></li>
+                                <li><a href="/contact" className="hover:text-white">Investigations</a></li>
+                                <li><a href="/contact" className="hover:text-white">Compliance</a></li>
+                                <li><a href="/contact" className="hover:text-white">Web3 Security</a></li>
+                                <li><a href="/contact" className="hover:text-white">Analytics</a></li>
                             </ul>
                         </div>
 

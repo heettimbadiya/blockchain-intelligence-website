@@ -33,18 +33,11 @@ const schema = yup.object().shape({
         )
         .required("Business email is required"),
 
-    companyName: yup.string().required("Company name is required"),
-
     phoneNumber: yup
         .string()
         .required("Phone number is required")
         .matches(/^[0-9]{10}$/, "Phone number must be exactly 10 digits"),
 
-    organizationType: yup.string().required("Organization type is required"),
-    country: yup.string().required("Country is required"),
-    solutionOfInterest: yup.string().required("Solution of interest is required"),
-    heardAboutUs: yup.string().required("This field is required"),
-    customMessage: yup.string(), // Optional
 });
 
 
@@ -154,13 +147,13 @@ export default function ContactSection() {
                                     {[
                                         { label: "First Name *", name: "firstName", type: "text", icon: User },
                                         { label: "Last Name *", name: "lastName", type: "text", icon: User },
-                                        { label: "Business Email *", name: "businessEmail", type: "email", icon: Mail },
-                                        { label: "Company Name *", name: "companyName", type: "text", icon: Building },
+                                        { label: "Email *", name: "businessEmail", type: "email", icon: Mail },
+                                        { label: "Company Name", name: "companyName", type: "text", icon: Building },
                                         { label: "Phone Number *", name: "phoneNumber", type: "tel", icon: Phone },
-                                        { label: "Country *", name: "country", type: "text", icon: Globe },
-                                        { label: "Organization Type *", name: "organizationType", type: "text", icon: Briefcase },
-                                        { label: "Solution of Interest *", name: "solutionOfInterest", type: "text", icon: Shield },
-                                        { label: "Heard About Us *", name: "heardAboutUs", type: "text", icon: Globe },
+                                        { label: "Country", name: "country", type: "text", icon: Globe },
+                                        { label: "Organization Type", name: "organizationType", type: "text", icon: Briefcase },
+                                        { label: "Solution of Interest", name: "solutionOfInterest", type: "text", icon: Shield },
+                                        { label: "Heard About Us", name: "heardAboutUs", type: "text", icon: Globe },
                                     ].map((field, idx) => (
                                         <div key={idx} className="space-y-2">
                                             <label className="text-sm font-semibold text-[#27346a] flex items-center gap-2">
