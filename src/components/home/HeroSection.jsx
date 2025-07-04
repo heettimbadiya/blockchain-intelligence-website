@@ -1,29 +1,45 @@
 import React from 'react';
-import {CustomButton} from "@/components/Button/Button";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { CustomButton } from '@/components/Button/Button';
 
-export default function HeroSection({
-                                        title = 'Blockchain intelligence for investigations, risk, and security',
-                                        subtitle = 'From reactive to proactive, monitor fraud, pursue illicit activity, and detect and deter threat actors.',
-                                        buttonText = 'Request a demo',
-                                        image,
-                                        imageAlt = 'Hero Illustration',
-                                    }) {
-    const navigate = useNavigate()
+export default function HeroSection() {
+    const navigate = useNavigate();
+
     return (
-        <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 min-h-[80vh] flex items-center">
-            <div className="max-w-7xl mx-auto px-6 py-24 w-full text-center">
-                <h1 className="text-5xl md:text-6xl font-bold text-[#27346a] mb-8 leading-tight tracking-tight">
-                    Blockchain Intelligence for a Safer Digital Economy
+        <section className="bg-white py-20 px-6">
+            <div className="max-w-6xl mx-auto text-center">
+                {/* Heading */}
+                <h1 className="text-4xl sm:text-5xl font-bold text-[#27346a] mb-4">
+                    Know what happens on blockchains
                 </h1>
-                <div className="w-24 h-1.5 bg-orange-500 rounded-full mx-auto mb-8" />
-                <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-                    Empowering governments, businesses, and institutions with the tools to navigate cryptocurrency with confidence.
+
+                {/* Subtext */}
+                <p className="text-base sm:text-lg text-[#293972] max-w-3xl mx-auto mb-6">
+                    Chainalysis is the blockchain data platform. We provide data, software, services, and research to government agencies,
+                    exchanges, financial institutions, and insurance and cybersecurity companies in over 70 countries. Our data powers
+                    <a href="#" className="text-blue-600 underline mx-1">investigation</a>,
+                    <a href="#" className="text-blue-600 underline mx-1">compliance</a>, and
+                    <a href="#" className="text-blue-600 underline mx-1">market intelligence</a> software that has been used to
+                    <a href="#" className="text-blue-600 underline mx-1">solve some of the world’s most high-profile criminal cases</a>
+                    and grow consumer access to cryptocurrency safely.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <CustomButton variant="primary" onClick={() => navigate('/contact')}>Request a Demo</CustomButton>
-                    <CustomButton variant="secondary" onClick={() => navigate('/solutions')}>Explore Our Solutions</CustomButton>
+
+                {/* CTA Button */}
+                <div className="mt-6 mb-12 flex justify-center">
+                    <CustomButton variant="primary" onClick={() => navigate('/careers')}>
+                        Careers at Chainalysis
+                    </CustomButton>
                 </div>
+
+                {/* Image Grid */}
+                <div>
+                        <img
+                            src="https://www.chainalysis.com/wp-content/uploads/2025/06/company-photos.jpg"
+                            alt="Meeting Room"
+                            className="rounded-xl object-cover w-full h-[636px]"
+                        />
+                </div>
+
             </div>
         </section>
     );
