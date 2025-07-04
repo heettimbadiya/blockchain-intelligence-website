@@ -73,7 +73,7 @@ export default function Header() {
           <Button variant="outline" className="text-sm xl:text-base">
             Log in
           </Button>
-          <Button variant="primary" className="text-sm xl:text-base">
+          <Button variant="primary" className="text-sm xl:text-base" onClick={() => navigate('/contact')>
             Request a demo
           </Button>
         </div>
