@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logo from '../../assets/logo-chainalysis.svg';
+import logo from '../../assets/logo-chainalysis.webp';
 import NavMenu from '../NavMenu/NavMenu';
 import Button from '../Button/Button';
 import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from "@/components/ui/drawer.jsx";

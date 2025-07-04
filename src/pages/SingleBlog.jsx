@@ -1,7 +1,13 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Tag, Clock, Share2 } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
+import crypto from '../assets/blogs/crypto.webp'
+import audit from '../assets/blogs/audit.webp'
+import block_chain from '../assets/blogs/block_chain.webp'
+import defi from '../assets/blogs/defi.webp'
+import BuildDefi from '../assets/blogs/Build-Defi-apps.webp'
+import complains from '../assets/blogs/complains.webp'
 const posts = [
     {
       id: 1,
@@ -12,8 +18,7 @@ const posts = [
       readTime: "8 min read",
       author: "Sarah Chen",
       category: "Compliance",
-      image:
-        "https://media.licdn.com/dms/image/v2/D5612AQHweiZHRLJ-lw/article-cover_image-shrink_720_1280/B56Zd04bCSHEAc-/0/1750012647242?e=2147483647&v=beta&t=THX0Hux9Di6mUgHI06EGAX8dK0LtYYW2zxlvo4aTmDk",
+      image:crypto,
       content: `
         <p>Cryptocurrency compliance has become an essential aspect of operating in the blockchain industry. In 2025, regulations have evolved to address emerging risks while encouraging innovation.</p>
         <p>This comprehensive guide explores key areas of compliance including KYC, AML policies, and tax reporting requirements that every crypto business must understand.</p>
@@ -40,8 +45,7 @@ const posts = [
       readTime: "12 min read",
       author: "Alex Rodriguez",
       category: "Security",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWBl-XF1IUYv1ZUseqzVRiw2nlICrXxmdlVgoyeakrSWzk3eWFCeokoW0c-qtXp_2oHi0&usqp=CAU",
+      image:block_chain,
       content: `
         <p>As decentralized applications grow in popularity, so do security threats. This comprehensive guide will help you understand the most critical risks in blockchain development and how to protect against them.</p>
         <h2>Common Vulnerabilities in Smart Contracts</h2>
@@ -66,7 +70,8 @@ const posts = [
       readTime: "6 min read",
       author: "Michael Thompson",
       category: "DeFi",
-      image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Q5Tr5VHnXSQzXWiRDWgKhw.jpeg",
+      image:
+      defi,
       content: `
         <p>Decentralized Finance (DeFi) is evolving rapidly and promises to reshape the financial landscape in unprecedented ways.</p>
         <h2>Emerging Trends Shaping DeFi's Future</h2>
@@ -88,7 +93,8 @@ const posts = [
       readTime: "10 min read",
       author: "Emma Davis",
       category: "Security",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HzU_B4TrV324a9d8cRwUtT5H5STe4iDAvg&s",
+      image:
+      audit,
       content: `
         <p>Smart contracts are at the core of decentralized applications, and their security is paramount. A comprehensive audit process can mean the difference between a successful launch and a costly exploit.</p>
         <p>This guide outlines the essential practices and methodologies that security professionals use to identify vulnerabilities and ensure contract reliability.</p>
@@ -117,7 +123,7 @@ const posts = [
       author: "David Wilson",
       category: "Compliance",
       image:
-        "https://media.licdn.com/dms/image/v2/D4E12AQEZ5zvS90E01w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1735441902880?e=2147483647&v=beta&t=_z7OKfXCAXTC70XoJOZpuxpP3RWuJkjssNhvRvPRzHE",
+      complains,
       content: `
         <p>The regulatory environment for cryptocurrency continues to evolve in 2025, with significant updates impacting exchanges, DeFi platforms, and digital asset service providers worldwide.</p>
         <p>Understanding these changes is crucial for maintaining compliance and avoiding costly penalties in an increasingly regulated industry.</p>
@@ -145,7 +151,8 @@ const posts = [
       readTime: "15 min read",
       author: "Lisa Park",
       category: "DeFi",
-      image: "https://www.solulab.com/wp-content/uploads/2025/03/Build-Defi-apps.png",
+      image:
+      BuildDefi,
       content: `
         <p>Scalability is a critical factor in the success of any DeFi application. As the ecosystem grows, developers must implement sophisticated architectural patterns to handle increasing user demand and transaction volumes.</p>
         <p>This comprehensive guide explores proven techniques and emerging technologies for building robust, high-performance DeFi platforms that can scale with your user base.</p>

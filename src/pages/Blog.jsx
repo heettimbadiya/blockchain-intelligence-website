@@ -15,7 +15,12 @@ import {
   Eye,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
+import crypto from '../assets/blogs/crypto.webp'
+import audit from '../assets/blogs/audit.webp'
+import block_chain from '../assets/blogs/block_chain.webp'
+import defi from '../assets/blogs/defi.webp'
+import BuildDefi from '../assets/blogs/Build-Defi-apps.webp'
+import complains from '../assets/blogs/complains.webp'
 export default function Blog() {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -37,8 +42,7 @@ export default function Blog() {
       views: 2847,
       likes: 156,
       comments: 23,
-      image:
-        "https://media.licdn.com/dms/image/v2/D5612AQHweiZHRLJ-lw/article-cover_image-shrink_720_1280/B56Zd04bCSHEAc-/0/1750012647242?e=2147483647&v=beta&t=THX0Hux9Di6mUgHI06EGAX8dK0LtYYW2zxlvo4aTmDk",
+      image:crypto,
       link: "#",
     },
     {
@@ -53,8 +57,7 @@ export default function Blog() {
       views: 3421,
       likes: 203,
       comments: 45,
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWBl-XF1IUYv1ZUseqzVRiw2nlICrXxmdlVgoyeakrSWzk3eWFCeokoW0c-qtXp_2oHi0&usqp=CAU",
+      image:      block_chain,
       link: "#",
     },
     {
@@ -70,7 +73,7 @@ export default function Blog() {
       likes: 89,
       comments: 12,
       image:
-        "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Q5Tr5VHnXSQzXWiRDWgKhw.jpeg",
+      defi,
       link: "#",
     },
     {
@@ -86,7 +89,7 @@ export default function Blog() {
       likes: 134,
       comments: 28,
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HzU_B4TrV324a9d8cRwUtT5H5STe4iDAvg&s",
+      audit,
       link: "#",
     },
     {
@@ -102,7 +105,7 @@ export default function Blog() {
       likes: 92,
       comments: 15,
       image:
-        "https://media.licdn.com/dms/image/v2/D4E12AQEZ5zvS90E01w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1735441902880?e=2147483647&v=beta&t=_z7OKfXCAXTC70XoJOZpuxpP3RWuJkjssNhvRvPRzHE",
+      complains,
       link: "#",
     },
     {
@@ -118,7 +121,7 @@ export default function Blog() {
       likes: 187,
       comments: 34,
       image:
-        "https://www.solulab.com/wp-content/uploads/2025/03/Build-Defi-apps.png",
+      BuildDefi,
       link: "#",
     },
   ];
