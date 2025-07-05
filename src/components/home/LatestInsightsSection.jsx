@@ -1,51 +1,50 @@
 import React from "react";
-import {Card, CardContent} from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
-import {CustomButton} from "@/components/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 export default function LatestInsightsSection() {
   const navigate = useNavigate();
-  const insights = [
-  { title: 'How Blockchain Analytics Uncovers Illicit Activity', category: 'Investigation' },
-  { title: '2024 Crypto Compliance Trends', category: 'Compliance' },
-  { title: 'Web3 Security: Protecting the Decentralized Future', category: 'Security' },
-];
+
   return (
-      <section className="py-20 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#27346a] mb-4">Latest Insights & News</h2>
-            <div className="w-16 h-1 bg-orange-500 rounded-full mx-auto mb-6" />
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Stay informed with our analysis and thought leadership.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {insights.map((insight, i) => (
-                <Card
-                    key={i}
-                    className="bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-lg transition-all duration-300 group"
-                >
-                  <CardContent className="p-8">
-                    <div className="text-sm font-semibold text-orange-500 uppercase mb-3">{insight.category}</div>
-                    <h3 className="text-xl font-bold text-[#27346a] mb-4 group-hover:text-orange-500 transition-colors duration-200">
-                      {insight.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6">Read our latest expert perspectives and reports.</p>
-                    <CustomButton variant="ghost" onClick={() => navigate('/resources')}>
-                      Read More <ChevronRight className="ml-1 w-4 h-4" />
-                    </CustomButton>
-                  </CardContent>
-                </Card>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <CustomButton variant="secondary" onClick={() => navigate('/resources')}>
-              View All Insights
-            </CustomButton>
-          </div>
+      <section className="w-full">
+        {/* Gradient Banner */}
+        <div className="bg-gradient-to-r from-orange-600 to-orange-400 py-24 px-4 flex flex-col items-center text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Get started—chat with one of our experts.
+          </h2>
+          <button
+              onClick={() => navigate("/contact")}
+              className="bg-[#27346a] hover:bg-[#1b2653] text-white font-semibold py-3 px-6 rounded-full transition-colors"
+          >
+            Request a demo
+          </button>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="py-16 px-4 md:px-8 mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <h3 className="text-2xl md:text-4xl font-bold text-[#27346a] text-center md:text-left">
+            Subscribe to our weekly newsletter
+          </h3>
+          <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // Add subscribe logic here
+              }}
+              className="flex flex-col sm:flex-row gap-3 w-full md:max-w-xl"
+          >
+            <input
+                type="email"
+                required
+                placeholder="Email Address"
+                className="border border-gray-300 px-5 py-3 w-full min-w-0 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            <button
+                type="submit"
+                className="bg-[#27346a] hover:bg-[#1b2653] text-white font-semibold px-8 py-3 rounded-full transition-colors w-full sm:w-auto"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
   );
-} 
+}
