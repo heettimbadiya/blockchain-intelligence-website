@@ -32,9 +32,46 @@ export default function AboutSection() {
     ];
 
     const teamMembers = [
-        { name: "Coming Soon", role: "Chief Executive Officer", image: "/api/placeholder/120/120" },
-        { name: "Coming Soon", role: "Chief Technology Officer", image: "/api/placeholder/120/120" },
-        { name: "Coming Soon", role: "Head of Operations", image: "/api/placeholder/120/120" }
+        {
+            name: "Jonathan Levin",
+            role: "Co-Founder and CEO",
+            image: "https://www.chainalysis.com/wp-content/uploads/2019/12/jonathan-02.jpg"
+        },
+        {
+            name: "Sari Granat",
+            role: "Chief Operating Officer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2022/04/image-from-ios.jpg"
+        },
+        {
+            name: "Sarah Ward",
+            role: "Chief Legal Officer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2021/10/20210729-chaina-01-sarahward-0062-copy.jpg"
+        },
+        {
+            name: "Omesh Agam",
+            role: "Chief Information Security Officer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2020/08/omesh-agam-2.jpg"
+        },
+        {
+            name: "Bas Lemmens",
+            role: "Chief Revenue Officer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2024/10/bas-lemmens-1-747x1024.jpg"
+        },
+        {
+            name: "Valentina Longo",
+            role: "Chief Financial Officer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2025/05/valentina-longo-website.jpg"
+        },
+        {
+            name: "Gerd Behrmann",
+            role: "Chief Engineer",
+            image: "https://www.chainalysis.com/wp-content/uploads/2020/01/chainalysis-dk35328-1-2667x4000.jpg"
+        },
+        {
+            name: "Jacob Illum",
+            role: "Chief Scientist",
+            image: "https://www.chainalysis.com/wp-content/uploads/2019/12/jacob-illum.jpg"
+        }
     ];
 
     const navigate = useNavigate();
@@ -137,27 +174,38 @@ export default function AboutSection() {
             <section className="py-20 bg-white">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#27346a] mb-6">Leadership Team</h3>
+                        <h3 className="text-3xl md:text-4xl font-bold text-[#27346a] mb-6">
+                            Leadership Team
+                        </h3>
                         <div className="w-24 h-1 bg-orange-500 rounded-full mx-auto mb-6"></div>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">Meet our team of passionate experts at the forefront of blockchain intelligence</p>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Meet our team of passionate experts at the forefront of blockchain intelligence.
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
-                                <div className="w-32 h-32 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                                    <Users className="w-16 h-16 text-gray-500" />
+                            <div
+                                key={index}
+                                className={'cursor-pointer group'}
+                            >
+                                <div className="w-full mb-4 rounded-lg overflow-hidden">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="object-cover w-full h-[290px] transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                    />
                                 </div>
-                                <h4 className="text-xl font-bold text-[#27346a] mb-2">{member.name}</h4>
-                                <p className="text-gray-600 font-medium mb-3">{member.role}</p>
-                                <p className="text-sm text-orange-500 bg-orange-50 px-4 py-2 rounded-full inline-block">
-                                    Team bios and photos coming soon
-                                </p>
+                                <h4 className="text-[18px] font-semibold text-[#27346a]">
+                                    {member.name}
+                                </h4>
+                                <p className="text-[#27346a] text-[15px]">{member.role}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
 
             {/* Careers */}
             <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 relative overflow-hidden">

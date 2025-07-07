@@ -86,7 +86,7 @@ export default function WhyChooseUsSection() {
   const translateX = -(currentIndex * 400);
 
   return (
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white overflow-auto scrollbar-hide">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Heading and Navigation */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
@@ -96,13 +96,13 @@ export default function WhyChooseUsSection() {
             <div className="flex gap-2">
               <button
                   onClick={goToPrev}
-                  className="w-10 h-10 border border-[#1b2653] rounded-full flex items-center justify-center hover:bg-[#1b2653] hover:text-white transition-colors"
+                  className="w-10 cursor-pointer h-10 border border-[#1b2653] rounded-full flex items-center justify-center hover:bg-[#1b2653] hover:text-white transition-colors"
               >
                 <ArrowLeft size={18} />
               </button>
               <button
                   onClick={goToNext}
-                  className="w-10 h-10 border border-[#1b2653] rounded-full flex items-center justify-center hover:bg-[#1b2653] hover:text-white transition-colors"
+                  className="w-10 cursor-pointer h-10 border border-[#1b2653] rounded-full flex items-center justify-center hover:bg-[#1b2653] hover:text-white transition-colors"
               >
                 <ArrowRight size={18} />
               </button>
