@@ -134,7 +134,7 @@ export default function SolutionsSection() {
                                 <p className="text-gray-600 mb-4">
                                     {solution.description}
                                 </p>
-                                <div className="text-orange-600 flex items-center font-medium">
+                                <div className="text-orange-600 flex items-center font-medium" onClick={() => navigate('/contact')}>
                                     Learn More
                                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </div>

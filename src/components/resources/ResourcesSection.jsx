@@ -159,7 +159,7 @@ export default function ResourcesSection() {
                             <CustomButton
                                 variant="ghost"
                                 className="w-full justify-center mt-2"
-                                onClick={() => navigate('/subscribe')}
+                                onClick={() => navigate('/contact')}
                             >
                                 Get Notified
                                 <ArrowRight className="w-4 h-4" />
@@ -182,7 +182,7 @@ export default function ResourcesSection() {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         <button
                             className="cursor-pointer flex items-center bg-white text-orange-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
-                            onClick={() => navigate('/subscribe')}
+                            onClick={() => navigate('/contact')}
                         >
                             <BookOpen className="w-5 h-5 mr-2" />
                             Subscribe to Updates

@@ -235,7 +235,7 @@ export default function AboutSection() {
                         </button>
                         <button
                             className="cursor-pointer border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-orange-600 transition-all duration-300 backdrop-blur-sm"
-                            onClick={() => navigate('/culture')}
+                            onClick={() => navigate('/contact')}
                         >
                             Learn More About Our Culture
                         </button>

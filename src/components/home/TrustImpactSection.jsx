@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card.jsx";
-
+import { useNavigate } from 'react-router-dom';
 export default function TrustImpactSection() {
+    const navigate = useNavigate()
     const logos = [
         { src: "https://www.chainalysis.com/wp-content/uploads/2025/01/logo-coinbase-1.svg", alt: "Coinbase logo" },
         { src: "https://www.chainalysis.com/wp-content/uploads/2025/02/logo-kraken.svg", alt: "Kraken logo" },
@@ -128,7 +128,7 @@ export default function TrustImpactSection() {
                     </div>
 
                     {/* Call to Action Button */}
-                    <button className="px-6 py-3 border border-[#1b2653] text-[#1b2653] font-semibold rounded-full hover:bg-[#1b2653] hover:text-white transition">
+                    <button className="px-6 py-3 border border-[#1b2653] text-[#1b2653] font-semibold rounded-full hover:bg-[#1b2653] hover:text-white transition" onClick={() =>navigate('/contact')}>
                         About blockchain intelligence
                     </button>
                 </div>
