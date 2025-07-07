@@ -13,7 +13,7 @@ export default function LatestInsightsSection() {
           </h2>
           <button
               onClick={() => navigate("/contact")}
-              className="bg-[#27346a] hover:bg-[#1b2653] text-white font-semibold py-3 px-6 rounded-full transition-colors"
+              className="bg-[#27346a] cursor-pointer hover:bg-[#1b2653] text-white font-semibold py-3 px-6 rounded-full transition-colors"
           >
             Request a demo
           </button>
@@ -39,7 +39,7 @@ export default function LatestInsightsSection() {
             />
             <button
                 type="submit"
-                className="bg-[#27346a] hover:bg-[#1b2653] text-white font-semibold px-8 py-3 rounded-full transition-colors w-full sm:w-auto"
+                className="bg-[#27346a] cursor-pointer hover:bg-[#1b2653] text-white font-semibold px-8 py-3 rounded-full transition-colors w-full sm:w-auto"
             >
               Subscribe
             </button>

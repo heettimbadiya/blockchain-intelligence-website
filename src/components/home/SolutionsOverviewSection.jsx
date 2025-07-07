@@ -136,12 +136,12 @@ export default function SolutionsOverviewSection() {
                     <p className="text-gray-600 mb-6">{item.description}</p>
                     <div>
 
-                      <div className={item.buttonText2 ? "flex gap-2" : ""}>
+                      <div className={item.buttonText2 ? "flex flex-col sm:flex-row gap-2" : ""}>
                       <button className="px-6 cursor-pointer py-3 border border-[#1b2653] text-[#1b2653] font-extrabold rounded-full hover:bg-[#1b2653] hover:text-white transition" onClick={() => navigate("/contact")}>
                         {item.buttonText}
                       </button>
 
-                      {item.buttonText2 && <div className={'mr-2'}> <button
+                      {item.buttonText2 && <div className={'sm:mr-2 mt-3 sm:mt-0'}> <button
                           className="px-6 cursor-pointer py-3 border border-[#1b2653] text-[#1b2653] font-extrabold rounded-full hover:bg-[#1b2653] hover:text-white mr-5" onClick={() => navigate("/contact")}>
                         {item.buttonText2}
                       </button> </div>}
