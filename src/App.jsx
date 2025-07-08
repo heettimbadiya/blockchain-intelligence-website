@@ -26,6 +26,21 @@ function ScrollToTop() {
 }
 
 function App() {
+  useEffect(() => {
+    // Prevent script from being added multiple times
+    if (document.getElementById('tawkto-script')) return;
+    const script = document.createElement('script');
+    script.id = 'tawkto-script';
+    script.async = true;
+    script.src = 'https://embed.tawk.to/686cdf0b47b3c5190d6abd13/1ivkkei1n'; // TODO: Replace with your Tawk.to property ID
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    document.body.appendChild(script);
+    return () => {
+      // Optionally clean up if needed
+      // document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
