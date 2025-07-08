@@ -47,7 +47,7 @@ export default function Header() {
 
   return (
       <header
-          className={`${isFixed ? 'fixed' : ''} top-0 left-0 w-full flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 bg-white z-50 shadow-sm transition-transform duration-300 ease-in-out ${
+          className={`${isFixed ? 'fixed' : ''} top-0 left-0 w-full flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 bg-white z-50 transition-transform duration-300 ease-in-out ${
               isFixed && isVisible ? 'translate-y-0' : isFixed && !isVisible ? '-translate-y-full' : 'translate-y-0'
           }`}
       >
@@ -74,12 +74,12 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
+
+        {/* Desktop Buttons */}
+        <div className="hidden lg:flex gap-3 xl:gap-4 items-center flex-shrink-0">
         <div className="hidden lg:block">
           <NavMenu />
         </div>
-
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex gap-3 xl:gap-4 flex-shrink-0">
           <Button variant="outline" className="text-sm xl:text-base">
             Log in
           </Button>

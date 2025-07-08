@@ -193,7 +193,7 @@ export default function AboutSection() {
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className="object-cover w-full h-[290px] transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                        className="object-cover object-top w-full h-[290px] transform transition-transform duration-300 ease-in-out group-hover:scale-110"
                                     />
                                 </div>
                                 <h4 className="text-[18px] font-semibold text-[#27346a]">
