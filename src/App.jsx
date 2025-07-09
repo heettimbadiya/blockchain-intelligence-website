@@ -32,7 +32,7 @@ function App() {
     const script = document.createElement('script');
     script.id = 'tawkto-script';
     script.async = true;
-    script.src = 'https://embed.tawk.to/686cdf0b47b3c5190d6abd13/1ivkkei1n'; // TODO: Replace with your Tawk.to property ID
+    script.src = 'https://embed.tawk.to/686e2853ad6e311918785ad7/1ivn4r2d8';
     script.charset = 'UTF-8';
     script.setAttribute('crossorigin', '*');
     document.body.appendChild(script);
