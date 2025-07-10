@@ -71,8 +71,8 @@ export default function ContactSection() {
         {
             icon: Mail,
             title: "General Inquiries",
-            details: "info@chainalysis.com",
-            href: "mailto:info@chainalysis.com",
+            details: "info@chainalysis.chat",
+            href: "mailto:info@chainalysis.chat",
             description: "For general questions and business inquiries",
         },
         {
@@ -85,8 +85,8 @@ export default function ContactSection() {
         {
             icon: Shield,
             title: "Support",
-            details: "support@chainalysis.com",
-            href: "mailto:support@chainalysis.com",
+            details: "support@chainalysis.chat",
+            href: "mailto:support@chainalysis.chat",
             description: "Technical support and customer service",
         },
     ];
