@@ -80,7 +80,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <NavMenu />
         </div>
-          <Button variant="outline" className="text-sm xl:text-base">
+          <Button variant="outline" className="text-sm xl:text-base" onClick={() => navigate('/admin')}>
             Log in
           </Button>
           <Button variant="primary" className="text-sm xl:text-base" onClick={() => navigate('/contact')}>
