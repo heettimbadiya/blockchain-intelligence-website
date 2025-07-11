@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import './App.css'
 import Header from "@/components/Header/Header.jsx";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation as useRouterLocation} from "react-router-dom";
 import Home from "@/pages/home/Home.jsx";
 import Solutions from "@/pages/Solutions.jsx";
 import About from "@/pages/About.jsx";
@@ -15,6 +15,10 @@ import Blog from "@/pages/Blog.jsx";
 import Report from "@/pages/Report.jsx";
 import Subscribe from "@/pages/Subscribe.jsx";
 import SingleBlog from "@/pages/SingleBlog.jsx";
+import Admin from "@/pages/Admin.jsx";
+import AdminContact from "@/pages/AdminContact.jsx";
+import ProtectedRoute from "@/components/ProtectedRoute.jsx";
+import NotFound from "@/pages/NotFound.jsx";
 import { Toaster } from "react-hot-toast";
 
 function ScrollToTop() {
@@ -26,6 +30,9 @@ function ScrollToTop() {
 }
 
 function App() {
+  const location = useRouterLocation();
+  const isAdminPage = location.pathname.startsWith('/admin');
+
   useEffect(() => {
     // Prevent script from being added multiple times
     if (document.getElementById('tawkto-script')) return;
@@ -46,7 +53,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Toaster position="top-center" />
       <ScrollToTop />
-      <Header />
+      {!isAdminPage && <Header />}
       <Routes>
         <Route path={'/'} element={<Home />} />
         <Route path={'/solutions/*'} element={<Solutions />} />
@@ -59,9 +66,15 @@ function App() {
         <Route path={'/blog/:id'} element={<SingleBlog />} />
         <Route path={'/report'} element={<Report />} />
         <Route path={'/subscribe'} element={<Subscribe />} />
+        <Route path={'/admin'} element={<Admin />} />
+        <Route path={'/adminContact'} element={
+          <ProtectedRoute>
+            <AdminContact />
+          </ProtectedRoute>
+        } />
+        <Route path={'*'} element={<NotFound />} />
       </Routes>
-        <Footer />
-
+      {!isAdminPage && <Footer />}
     </div>
   )
 }
