@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 export default function Admin() {
   const [credentials, setCredentials] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -14,8 +14,8 @@ export default function Admin() {
 
   // Dummy credentials for demo
   const DUMMY_CREDENTIALS = {
-    username: "admin",
-    password: "admin123",
+    email: "chainalysiss@gmail.com",
+    password: "Alwayswin@123",
   };
 
   const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ export default function Admin() {
     // Simulate API call delay
     setTimeout(() => {
       if (
-        credentials.username === DUMMY_CREDENTIALS.username &&
+        credentials.email === DUMMY_CREDENTIALS.email &&
         credentials.password === DUMMY_CREDENTIALS.password
       ) {
         // Store admin session
@@ -77,15 +77,15 @@ export default function Admin() {
             <div className="space-y-2">
               <label className="text-sm font-semibold text-[#27346a] flex items-center gap-2">
                 <Lock className="w-4 h-4" />
-                Username
+                Email
               </label>
               <input
                 type="text"
-                name="username"
-                value={credentials.username}
+                name="email"
+                value={credentials.email}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-100 transition-all duration-200"
-                placeholder="Enter your username"
+                placeholder="Enter your email"
                 required
               />
             </div>
@@ -117,23 +117,6 @@ export default function Admin() {
                     <Eye className="w-5 h-5" />
                   )}
                 </button>
-              </div>
-            </div>
-
-            {/* Demo Credentials Info */}
-            <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
-              <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                <div className="text-sm">
-                  <p className="font-semibold text-[#27346a] mb-1">
-                    Demo Credentials
-                  </p>
-                  <p className="text-gray-600">
-                    Username: <span className="font-mono">admin</span>
-                    <br />
-                    Password: <span className="font-mono">admin123</span>
-                  </p>
-                </div>
               </div>
             </div>
 
