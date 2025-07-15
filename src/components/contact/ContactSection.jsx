@@ -78,8 +78,8 @@ export default function ContactSection() {
         {
             icon: Phone,
             title: "Call Us",
-            details: "+1 (555) 123-4567",
-            href: "tel:+15551234567",
+            details: "+18182752859",
+            href: "tel:+18182752859",
             description: "Speak directly with our experts",
         },
         {
