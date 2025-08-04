@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { CustomButton } from '@/components/Button/Button';
 
 export default function HeroSection({
-    title="Blockchain intelligence for investigations, risk, and security",
+    title="Scammed Out of Crypto? We Can Help",
     description=<p className="text-base sm:text-lg text-[#293972] max-w-3xl mx-auto mb-6">
-        From reactive to proactive, monitor fraud, pursue illicit activity, and detect and deter threat actors.
+        Our crypto forensics team traces stolen funds, investigates fraud, and helps victims recover what’s theirs—quickly and professionally.
     </p>,
-    buttonText="Request a demo",
+    buttonText="Start Recovery",
     buttonNavigation="/contact",
     image="https://www.chainalysis.com/wp-content/uploads/2025/03/home-page-header-2.svg"
                                     }) {
