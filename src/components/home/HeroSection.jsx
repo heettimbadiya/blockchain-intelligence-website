@@ -5,7 +5,7 @@ import { CustomButton } from '@/components/Button/Button';
 export default function HeroSection({
     title="Scammed Out of Crypto? We Can Help",
     description=<p className="text-base sm:text-lg text-[#293972] max-w-3xl mx-auto mb-6">
-        Our crypto forensics team traces stolen funds, investigates fraud, and helps victims recover what’s theirs—quickly and professionally.
+        Our crypto forensics team traces stolen funds, investigates fraud, and helps victims recover what’s theirs—quickly and professionally.<br/> Start your free case review below.
     </p>,
     buttonText="Start Recovery",
     buttonNavigation="/contact",
